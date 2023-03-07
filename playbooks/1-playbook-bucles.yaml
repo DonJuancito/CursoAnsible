@@ -1,12 +1,78 @@
 -   hosts:          localhost   
     gather_facts:   false
     vars:
-        software:
+        software_malo:
             - curl
             - nginx
             - git
+            - mariadb
+        puertos_malo: 
+            - 80
+            - 443
+            - 3306
+            
+        software_como_lista_de_mapas: 
+            -   name: nginx
+                ports:
+                    - 80
+                    - 443
+            -   name: mariadb
+                ports:
+                    - 3306
+        software_como_mapa_de_mapas: 
+            nginx:
+                version: 1.21.2
+                usuario: www-data
+                ports:
+                    - 80
+                    - 443
+            mariadb:
+                ports:
+                    - 3306
+                    
+        software_como_lista_de_listas: 
+            -   - nginx
+                - 80
+                - 443
+            -   - mariadb
+                - 3306
+        
+        software_como_mapa_de_listas:
+            nginx:
+                - 80
+                - 443
+            mariadb:
+                - 3306
+                           
     tasks:
         -   name: Instalar programas
             debug:  
-                msg:    Estoy instalando con apt el programa {{ item }}
-            loop:       "{{ software }}"
+                msg:   |
+                        Estoy instalando con apt el programa {{ item.name }}
+                        Y debo abrirle los puertos: {{ item.ports }}
+                        
+            loop:       "{{ software_como_lista_de_mapas }}"
+            
+        -   name: Instalar programas version 2
+            debug:  
+                msg:   |
+                        Estoy instalando con apt el programa {{ item.key }}
+                        Y debo abrirle los puertos: {{ item.value.ports }}
+                        
+            loop:       "{{ software_como_mapa_de_mapas | dict2items }}"   
+            
+        -   name: variable original
+            debug:
+                var: 
+        
+        -   name: variable con subelements
+            debug:
+                var: 
+            
+        -   name: Abrir puertos 
+            debug:
+                 msg: |
+                  Debo abrir el puerto: {{ item[1] }}
+                  Para el programa:     {{ item[0].key }}
+                  
+            loop: "{{ software_como_mapa_de_mapas | dict2items | subelements('value.ports') }}"
