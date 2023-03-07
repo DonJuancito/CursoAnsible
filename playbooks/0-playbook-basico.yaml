@@ -1,0 +1,72 @@
+-   hosts:  localhost
+
+    gather_facts: true
+
+    pre_tasks:
+        -   name: Pre tarea 1
+            debug:
+                msg: soy la pre tarea 1
+
+        -   name: Pre tarea 2
+            debug:
+                msg: soy la pre tarea 2
+                
+        -   name: Pre tarea 3
+            debug:
+                var: ansible_facts     
+        
+        -   name: Pre tarea 4
+            debug:
+                msg: "Sistema operativo: {{ ansible_facts.distribution }}" 
+                
+        -   name: Pre tarea 5
+            debug:
+                msg: "Memoria swap libre: {{ ansible_facts.memory_mb.swap.free }}"    
+                
+        -   name: Pre tarea 6
+            debug:
+                msg: "Tipo del 2º CPU: {{ ansible_facts.processor[5] }}" 
+                
+        -   name: Pre tarea 7
+            debug:
+                msg: |- 
+                         Un calculo: {{ 3 + 4 }}
+                         Memoria en uso: {{ ansible_facts.memory_mb.real.total - ansible_facts.memory_mb.real.free }}
+                         
+        -   name: Pre tarea 8
+            debug:
+                msg: "Tipo del 2º CPU: {{ ansible_facts.processor[5] | upper }}" 
+        #-   name: Pre tarea 3
+         #   debug:
+          #      msg: Quiero mostrar los facts de mi host {{ ansible_facts }}
+    tasks: 
+        -   name: Tarea 1
+            debug:
+                msg: soy la tarea 1
+                
+        -   name: Tarea 2
+            debug:
+                msg: soy la tarea 2
+                
+        -   name: Asegurarme que hay un usuario 'felipe' con una configuración
+            user:
+                name:   felipe
+                home:   /home/felipon
+                state:  present
+            become:     true
+                
+        -   name: Quiero saber la version de nginx que tengo instalada
+            shell:
+                cmd:        nginx --version
+            changed_when:   false
+            failes_when:    false
+        
+
+    post_tasks:
+        -   name: Post tarea 1
+            debug:
+                msg: soy la post tarea 1
+                
+        -   name: Post tarea 2
+            debug:
+                msg: soy la post tarea 2
