@@ -1,6 +1,10 @@
 -   hosts:  localhost
 
     gather_facts: true
+    
+    vars: 
+        usuario: "felipe"
+        home_usuario: "/home/felipe"
 
     pre_tasks:
         -   name: Pre tarea 1
@@ -50,8 +54,8 @@
                 
         -   name: Asegurarme que hay un usuario 'felipe' con una configuración
             user:
-                name:   felipe
-                home:   /home/felipon
+                name:   "{{ usuario }}"
+                home:   "{{ home_usuario }}"
                 state:  present
             become:     true
                 
@@ -59,8 +63,58 @@
             shell:
                 cmd:        nginx --version
             changed_when:   false
-            failes_when:    false
-        
+            failed_when:    false
+            
+        -   name: Tarea 3
+            debug:
+                msg: Soy una tarea condicional que se ejecuta solo en máquinas UBUNTU
+            when: ansible_facts.distribution == "Ubuntu"
+            
+        -   name: Tarea 4
+            debug:
+                msg: Soy una tarea condicional que se ejecuta solo en máquinas QUE NO SON UBUNTU
+            when: ansible_facts.distribution != "Ubuntu"
+            
+        -   name: Tarea 5 
+            debug: 
+                msg: Esta es una tarea que esta instalando unas cosas
+            tags:
+                - instalacion
+                
+        -   name: Tarea 6 
+            debug: 
+                msg: Esta es una tarea que esta configurando unas cosas
+            tags:
+                - configuracion      
+                
+        -   name: Tarea 7 
+            debug: 
+                msg: Esta es una tarea que esta probando unas cosas
+            tags:
+                - test
+                - always
+                
+        -   name: Tarea 8
+            debug: 
+                msg: Esta es una tarea que va a invocar un handlers
+            notify: Handler 1
+            changed_when: true
+            
+        -   name: Tarea 9
+            debug: 
+                msg: Esta es una tarea que va a invocar un handlers
+            notify: Handler 1
+            changed_when: true    
+            
+        -   name: Tarea 10
+            debug: 
+                msg: Esta es otra tarea
+                
+        -   name: Tarea 11
+            debug: 
+                msg: Esta es una tarea que va a invocar un EVENTO
+            notify: SERVIDOR_RECONFIGURADO 
+            changed_when: true        
 
     post_tasks:
         -   name: Post tarea 1
@@ -70,3 +124,23 @@
         -   name: Post tarea 2
             debug:
                 msg: soy la post tarea 2
+                
+    handlers:
+    
+        -   name: Handler 1
+            debug:
+                msg: Soy el Handler 1
+            listen:
+                - SERVIDOR_RECONFIGURADO
+                
+        -   name: Handler 2
+            debug:
+                msg: Soy el Handler 2   
+            listen:
+                - SERVIDOR_RECONFIGURADO
+                
+        -   name: Handler 3
+            debug:
+                msg: Soy el Handler 3   
+            listen:
+                - SERVIDOR_RECONFIGURADO
