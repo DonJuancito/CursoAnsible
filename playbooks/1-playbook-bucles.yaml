@@ -1,0 +1,12 @@
+-   hosts:          localhost   
+    gather_facts:   false
+    vars:
+        software:
+            - curl
+            - nginx
+            - git
+    tasks:
+        -   name: Instalar programas
+            debug:  
+                msg:    Estoy instalando con apt el programa {{ item }}
+            loop:       "{{ software }}"
