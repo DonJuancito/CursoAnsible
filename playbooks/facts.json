@@ -1,11 +1,11 @@
-
+{
     "ansible_facts": {
         "all_ipv4_addresses": [
             "172.17.0.1", 
-            "172.31.19.110"
+            "172.31.21.62"
         ], 
         "all_ipv6_addresses": [
-            "fe80::4ee:34ff:fe51:9bf1"
+            "fe80::48c:76ff:fe53:ed9d"
         ], 
         "ansible_local": {}, 
         "apparmor": {
@@ -24,16 +24,16 @@
         "date_time": {
             "date": "2023-03-06", 
             "day": "06", 
-            "epoch": "1678108372", 
+            "epoch": "1678107696", 
             "hour": "13", 
-            "iso8601": "2023-03-06T13:12:52Z", 
-            "iso8601_basic": "20230306T131252117572", 
-            "iso8601_basic_short": "20230306T131252", 
-            "iso8601_micro": "2023-03-06T13:12:52.117644Z", 
-            "minute": "12", 
+            "iso8601": "2023-03-06T13:01:36Z", 
+            "iso8601_basic": "20230306T130136746031", 
+            "iso8601_basic_short": "20230306T130136", 
+            "iso8601_micro": "2023-03-06T13:01:36.746109Z", 
+            "minute": "01", 
             "month": "03", 
-            "second": "52", 
-            "time": "13:12:52", 
+            "second": "36", 
+            "time": "13:01:36", 
             "tz": "UTC", 
             "tz_offset": "+0000", 
             "weekday": "Monday", 
@@ -42,12 +42,12 @@
             "year": "2023"
         }, 
         "default_ipv4": {
-            "address": "172.31.19.110", 
+            "address": "172.31.21.62", 
             "alias": "ens5", 
             "broadcast": "172.31.31.255", 
             "gateway": "172.31.16.1", 
             "interface": "ens5", 
-            "macaddress": "06:ee:34:51:9b:f1", 
+            "macaddress": "06:8c:76:53:ed:9d", 
             "mtu": 9001, 
             "netmask": "255.255.240.0", 
             "network": "172.31.16.0", 
@@ -57,20 +57,20 @@
         "device_links": {
             "ids": {
                 "nvme0n1": [
-                    "nvme-Amazon_Elastic_Block_Store_vol04ff9657cf654b908", 
-                    "nvme-nvme.1d0f-766f6c3034666639363537636636353462393038-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001"
+                    "nvme-Amazon_Elastic_Block_Store_vol0fb78b498eb34cf58", 
+                    "nvme-nvme.1d0f-766f6c3066623738623439386562333463663538-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001"
                 ], 
                 "nvme0n1p1": [
-                    "nvme-Amazon_Elastic_Block_Store_vol04ff9657cf654b908-part1", 
-                    "nvme-nvme.1d0f-766f6c3034666639363537636636353462393038-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001-part1"
+                    "nvme-Amazon_Elastic_Block_Store_vol0fb78b498eb34cf58-part1", 
+                    "nvme-nvme.1d0f-766f6c3066623738623439386562333463663538-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001-part1"
                 ], 
                 "nvme0n1p14": [
-                    "nvme-Amazon_Elastic_Block_Store_vol04ff9657cf654b908-part14", 
-                    "nvme-nvme.1d0f-766f6c3034666639363537636636353462393038-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001-part14"
+                    "nvme-Amazon_Elastic_Block_Store_vol0fb78b498eb34cf58-part14", 
+                    "nvme-nvme.1d0f-766f6c3066623738623439386562333463663538-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001-part14"
                 ], 
                 "nvme0n1p15": [
-                    "nvme-Amazon_Elastic_Block_Store_vol04ff9657cf654b908-part15", 
-                    "nvme-nvme.1d0f-766f6c3034666639363537636636353462393038-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001-part15"
+                    "nvme-Amazon_Elastic_Block_Store_vol0fb78b498eb34cf58-part15", 
+                    "nvme-nvme.1d0f-766f6c3066623738623439386562333463663538-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001-part15"
                 ]
             }, 
             "labels": {
@@ -131,9 +131,9 @@
                 "sas_address": null, 
                 "sas_device_handle": null, 
                 "scheduler_mode": "mq-deadline", 
-                "sectors": "49944", 
+                "sectors": "102072", 
                 "sectorsize": "512", 
-                "size": "24.39 MB", 
+                "size": "49.84 MB", 
                 "support_discard": "4096", 
                 "vendor": null, 
                 "virtual": 1
@@ -154,9 +154,9 @@
                 "sas_address": null, 
                 "sas_device_handle": null, 
                 "scheduler_mode": "mq-deadline", 
-                "sectors": "102072", 
+                "sectors": "49944", 
                 "sectorsize": "512", 
-                "size": "49.84 MB", 
+                "size": "24.39 MB", 
                 "support_discard": "4096", 
                 "vendor": null, 
                 "virtual": 1
@@ -281,8 +281,8 @@
                 "host": "Non-Volatile memory controller: Amazon.com, Inc. Device 8061", 
                 "links": {
                     "ids": [
-                        "nvme-Amazon_Elastic_Block_Store_vol04ff9657cf654b908", 
-                        "nvme-nvme.1d0f-766f6c3034666639363537636636353462393038-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001"
+                        "nvme-Amazon_Elastic_Block_Store_vol0fb78b498eb34cf58", 
+                        "nvme-nvme.1d0f-766f6c3066623738623439386562333463663538-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001"
                     ], 
                     "labels": [], 
                     "masters": [], 
@@ -302,7 +302,7 @@
                 "vendor": null, 
                 "virtual": 1
             }
-        }, 
+        },  
         "distribution": "Ubuntu", 
         "distribution_file_parsed": true, 
         "distribution_file_path": "/etc/os-release", 
@@ -384,7 +384,7 @@
                 "vlan_challenged": "off [fixed]"
             }, 
             "hw_timestamp_filters": [], 
-            "id": "8000.0242a61a7bcf", 
+            "id": "8000.0242c6f70965", 
             "interfaces": [], 
             "ipv4": {
                 "address": "172.17.0.1", 
@@ -392,7 +392,7 @@
                 "netmask": "255.255.0.0", 
                 "network": "172.17.0.0"
             }, 
-            "macaddress": "02:42:a6:1a:7b:cf", 
+            "macaddress": "02:42:c6:f7:09:65", 
             "mtu": 1500, 
             "promisc": false, 
             "stp": false, 
@@ -469,19 +469,19 @@
             }, 
             "hw_timestamp_filters": [], 
             "ipv4": {
-                "address": "172.31.19.110", 
+                "address": "172.31.21.62", 
                 "broadcast": "172.31.31.255", 
                 "netmask": "255.255.240.0", 
                 "network": "172.31.16.0"
             }, 
             "ipv6": [
                 {
-                    "address": "fe80::4ee:34ff:fe51:9bf1", 
+                    "address": "fe80::48c:76ff:fe53:ed9d", 
                     "prefix": "64", 
                     "scope": "link"
                 }
             ], 
-            "macaddress": "06:ee:34:51:9b:f1", 
+            "macaddress": "06:8c:76:53:ed:9d", 
             "module": "ena", 
             "mtu": 9001, 
             "pciid": "0000:00:05.0", 
@@ -494,10 +494,10 @@
             "type": "ether"
         }, 
         "env": {
-            "C9_HOSTNAME": "34.245.3.131", 
-            "C9_PID": "925d4d3fd23a4f229d7ce59625cc625d", 
+            "C9_HOSTNAME": "54.246.132.184", 
+            "C9_PID": "0ece338f8dc54940bf9a69e61a577708", 
             "C9_PORT": "8080", 
-            "C9_PROJECT": "TRF_Profesor_E", 
+            "C9_PROJECT": "TRF_Profesor", 
             "C9_USER": "TRF_Profesor", 
             "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus", 
             "EDITOR": "", 
@@ -519,7 +519,6 @@
             "NVM_CD_FLAGS": "", 
             "NVM_DIR": "/home/ubuntu/.nvm", 
             "NVM_INC": "/home/ubuntu/.nvm/versions/node/v16.19.1/include/node", 
-            "OLDPWD": "/home/ubuntu/environment/curso", 
             "PATH": "/home/ubuntu/.rvm/gems/ruby-2.6.3/bin:/home/ubuntu/.rvm/gems/ruby-2.6.3@global/bin:/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin:/home/ubuntu/.nvm/versions/node/v16.19.1/bin:/home/ubuntu/.rvm/gems/ruby-2.6.3/bin:/home/ubuntu/.rvm/gems/ruby-2.6.3@global/bin:/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin:/home/ubuntu/.rvm/gems/ruby-2.6.3/bin:/home/ubuntu/.rvm/gems/ruby-2.6.3@global/bin:/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ubuntu/.local/bin:/home/ubuntu/bin:/usr/local/bin:/home/ubuntu/.rvm/bin:/home/ubuntu/.local/bin:/home/ubuntu/bin:/usr/local/bin:/home/ubuntu/.rvm/bin:/home/ubuntu/.rvm/bin:/home/ubuntu/.local/bin:/home/ubuntu/bin:/usr/local/bin:/home/ubuntu/.rvm/bin:/home/ubuntu/.rvm/bin", 
             "PORT": "8080", 
             "PROMPT_COMMAND": "history -a;", 
@@ -527,32 +526,35 @@
             "RUBY_VERSION": "ruby-2.6.3", 
             "SHELL": "/bin/bash", 
             "SHLVL": "5", 
-            "SSH_CLIENT": "127.0.0.1 52562 22", 
-            "SSH_CONNECTION": "127.0.0.1 52562 127.0.0.1 22", 
-            "TERM": "screen", 
-            "TMUX": "/tmp/tmux-1000/cloud92.2,2948,0", 
-            "TMUX_PANE": "%0", 
+            "SSH_CLIENT": "127.0.0.1 32936 22", 
+            "SSH_CONNECTION": "127.0.0.1 55748 127.0.0.1 22", 
+            "TERM": "xterm-256color", 
+            "TMUX": "/tmp/tmux-1000/cloud92.2,2998,8", 
+            "TMUX_PANE": "%8", 
             "USER": "ubuntu", 
             "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop", 
             "XDG_RUNTIME_DIR": "/run/user/1000", 
             "XDG_SESSION_ID": "5", 
             "_": "/usr/bin/ansible-playbook", 
             "rvm_bin_path": "/home/ubuntu/.rvm/bin", 
+            "rvm_loaded_flag": "1", 
             "rvm_path": "/home/ubuntu/.rvm", 
             "rvm_prefix": "/home/ubuntu", 
+            "rvm_stored_umask": "0002", 
+            "rvm_user_install_flag": "1", 
             "rvm_version": "1.29.8 (1.29.8)"
         }, 
         "fips": false, 
         "form_factor": "Other", 
-        "fqdn": "ip-172-31-19-110.eu-west-1.compute.internal", 
+        "fqdn": "ip-172-31-21-62.eu-west-1.compute.internal", 
         "gather_subset": [
             "all"
         ], 
-        "hostname": "ip-172-31-19-110", 
+        "hostname": "ip-172-31-21-62", 
         "interfaces": [
-            "lo", 
+            "ens5", 
             "docker0", 
-            "ens5"
+            "lo"
         ], 
         "is_chroot": false, 
         "kernel": "5.4.0-1096-aws", 
@@ -650,16 +652,16 @@
         }, 
         "machine": "x86_64", 
         "machine_id": "ec268a00172ce7443967295a2adfaad3", 
-        "memfree_mb": 5509, 
+        "memfree_mb": 5503, 
         "memory_mb": {
             "nocache": {
-                "free": 6942, 
-                "used": 914
+                "free": 6945, 
+                "used": 911
             }, 
             "real": {
-                "free": 5509, 
+                "free": 5503, 
                 "total": 7856, 
-                "used": 2347
+                "used": 2353
             }, 
             "swap": {
                 "cached": 0, 
@@ -672,27 +674,43 @@
         "module_setup": true, 
         "mounts": [
             {
-                "block_available": 922156, 
+                "block_available": 921167, 
                 "block_size": 4096, 
                 "block_total": 2493522, 
-                "block_used": 1571366, 
+                "block_used": 1572355, 
                 "device": "/dev/nvme0n1p1", 
                 "fstype": "ext4", 
-                "inode_available": 1038310, 
+                "inode_available": 1038313, 
                 "inode_total": 1290240, 
-                "inode_used": 251930, 
+                "inode_used": 251927, 
                 "mount": "/", 
                 "options": "rw,relatime,discard", 
-                "size_available": 3777150976, 
+                "size_available": 3773100032, 
                 "size_total": 10213466112, 
                 "uuid": "9244fa90-6aaa-4673-828d-9f31eed28dee"
             }, 
             {
                 "block_available": 0, 
                 "block_size": 131072, 
+                "block_total": 399, 
+                "block_used": 399, 
+                "device": "/dev/loop1", 
+                "fstype": "squashfs", 
+                "inode_available": 0, 
+                "inode_total": 496, 
+                "inode_used": 496, 
+                "mount": "/snap/snapd/18357", 
+                "options": "ro,nodev,relatime", 
+                "size_available": 0, 
+                "size_total": 52297728, 
+                "uuid": "N/A"
+            }, 
+            {
+                "block_available": 0, 
+                "block_size": 131072, 
                 "block_total": 196, 
                 "block_used": 196, 
-                "device": "/dev/loop1", 
+                "device": "/dev/loop2", 
                 "fstype": "squashfs", 
                 "inode_available": 0, 
                 "inode_total": 16, 
@@ -720,22 +738,6 @@
                 "uuid": "N/A"
             }, 
             {
-                "block_available": 0, 
-                "block_size": 131072, 
-                "block_total": 399, 
-                "block_used": 399, 
-                "device": "/dev/loop2", 
-                "fstype": "squashfs", 
-                "inode_available": 0, 
-                "inode_total": 496, 
-                "inode_used": 496, 
-                "mount": "/snap/snapd/18357", 
-                "options": "ro,nodev,relatime", 
-                "size_available": 0, 
-                "size_total": 52297728, 
-                "uuid": "N/A"
-            }, 
-            {
                 "block_available": 203067, 
                 "block_size": 512, 
                 "block_total": 213716, 
@@ -752,7 +754,7 @@
                 "uuid": "098B-D34E"
             }
         ], 
-        "nodename": "ip-172-31-19-110", 
+        "nodename": "ip-172-31-21-62", 
         "os_family": "Debian", 
         "pkg_mgr": "apt", 
         "processor": [
@@ -798,10 +800,10 @@
         }, 
         "selinux_python_present": true, 
         "service_mgr": "systemd", 
-        "ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBAItJCUSIRQFQv34xVffK4p1CWeJ3VauEnv8IzAbsL2FzYdpVBKvi20T+1cJMuuQF7DQ1xq7NDUgNwquP9z7CeGzKFCMe4AK7dqzrfXLNB2ckiGvxl/ZTZ4+Ww8ho/ul8ANnfyxGjycG5E3zMJ0uB0r2AcpSm31E29+hKyeDJcbC5AAAAFQDyAhRtesPD6Mh6zA0OcBGApGfJ/QAAAIAVYLpk+UrjE16BLOGqGaPff8D/jje/s6UIMpxAIVHiyLGfwaxGdUtxXSk/eGWKTF1hw9laaSBy06FwfWHnzpQrlhWj7zbZu+Ar2KtllbsYrzU7MFGU8QYxBf71tO9HxsV9YEYF803s+tV14jeUc58vroAtOuIB5Gg+9gotVLngIAAAAIB/aw5YUna8v3jI/PRTnNoSXW4uFvJ1/a+8Wde9pa75Qxf984XJEVkxZebrHeJuouo65HrzC3ndefelVAG/kXUyiDiCYoBSGg5+2xh278WfxS4oiNYDugFJU1MLP1XBYvYQmeBjPrLO/0JgvuT/Bfrfh7LOx4kvUYgyqaJhxR6seQ==", 
-        "ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBB9ByOW4WCeu2zn7+U/r5RoTXeZ3Ysi+8Kah1unT+1496/LVzEpI9UkRALHzxb8LWNjVtAdJbB73NNBLPd5BKU8=", 
-        "ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIK+ykIYavFaZT9PbKQxah6SA+f/opAFAi6xdz3zHJoIv", 
-        "ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDLRnkoVpOtBHfMZ3iN1tLOhdw4r6Aj83K6OObS1vxEIGsC7fvgje8tGkAYH/w//PV7upS6uKv90BQCR/6yyvUeoTjuQX57Kknykcg9vVsCJzEN+1T+Qrzjkg4fGkTWDX/0aO5TAkqRhpduqk7jrOPgIvFFxbZ7877P8ZrWpZkGjDFTYW08BjZqxgHsUCPvAhNzgaalYgsWw7huMl1xcgjum5rFaOPqXeY8RgNfsLD+g6h42+Pj0xI0A9edabozlU8Dgcj+O6K9fMGVyijrInoGPeot5UJWq1lPHNOKgys2oo81bGG2XpYDigtna2U13C5WWamEqXIGS/W+3hgOHc9D", 
+        "ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBAKtll6zvKcffVGd8WLZ4jTVSlbzi7V9zds3ogYUxoILs0PpibQUM7wRSRz0q2/6VUtvEjgvzOpsd0FYm2nBRxIIxkOLQVovW4jGxzMl+xAB3IE4SGOTX2+J5+l1a0t24WCvGZgc8WybUPbwyq0WPKTKcOryShDzwcB5BgYB60egNAAAAFQCUD6hX/8yTJZ9WfSOBaBDv+Cjb0wAAAIAuTGhQM3z3Exu7RSAZXqmTk4CCErskaESpP7+0WLdVhUvU+378EAkPOn10Rbv1BR8CDI9yaLfMouLSaBrd9zU+BY4RHcqzb6wuAOY9KQoj6G1XET353d8bwumyDNsrNPRl8E7qoLDxGXo64/JegZlysz+B4D5E/OJits72Zd4UnQAAAIAItYqZBl+QQDQtDPbUiW/WGCojSGTvJczbJe3LTG6WLm2Gxjml5IWGOOSQtsARHw/K5p4CZbqIHWSnuC9eqehwnaKwOrtNfHUX807+N1+19g2CfcseI1OiYa88dg9mEz708d1VvBtukm4TtU72r2UDzSy0cEgdAsptXCk412IJ+g==", 
+        "ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGvjxeGNzmmCUWVOOLPlipkGGIA/PJaTe7Fp2oL5J+QjUQKnXN/L+ZV+U+tdjf16puZNMK+G8uTKxQaPabPfZHM=", 
+        "ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIFDhF7ME9QA1VyCBj7wXljgPyCgO2MRfrayeTPxf1n7Q", 
+        "ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC4nWNjlDV2GqOF6zLhtz/JohWpi0r0AxzVYFWme2MDcaJQ6NNixeZSB2rbbHsEhyd6QjR7IU1DqRdcubc6KViES0Z4caZcd0+WXfh6F0YIBqTIhHP33LGHX/JER5zf8Jtol6nCC3J+xe8CA/LxuS/AVJOuNTBTKd87TT3RDepguKc0XCp19SrAo4dD96LhLBf+uq75mcTiIxg8pER7PJLEReqB1x9EyQGNc2gmx7uvBegZwUzr4EiceiuMXEeBbjPCDijVOLBMnmhFSfTuDG8+SjHUmeJ9i9Gkg2mFvTG/nRN4emL6pCqv8BvW9RZYl/PluzMBLVl6OIvMOZakg5px", 
         "swapfree_mb": 488, 
         "swaptotal_mb": 488, 
         "system": "Linux", 
@@ -810,7 +812,7 @@
         ], 
         "system_capabilities_enforced": "True", 
         "system_vendor": "Amazon EC2", 
-        "uptime_seconds": 16644, 
+        "uptime_seconds": 16010, 
         "user_dir": "/home/ubuntu", 
         "user_gecos": "Ubuntu", 
         "user_gid": 1000, 
@@ -823,16 +825,3 @@
         "virtualization_type": "kvm"
     }
 }
-
-TASK [Pre tarea 4] *******************************************************************************************************************
-ok: [localhost] => {
-    "msg": "Sistema operativo: Ubuntu"
-}
-
-TASK [Pre tarea 5] *******************************************************************************************************************
-fatal: [localhost]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'dict object' has no attribute 'memory'\n\nThe error appears to have been in '/home/ubuntu/environment/curso/playbooks/0-playbook-basico.yaml': line 22, column 13, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n        -   name: Pre tarea 5\n            ^ here\n"}
-	to retry, use: --limit @/home/ubuntu/environment/curso/playbooks/0-playbook-basico.retry
-
-PLAY RECAP ***************************************************************************************************************************
-localhost                  : ok=5    changed=0    unreachable=0    failed=1   
-
