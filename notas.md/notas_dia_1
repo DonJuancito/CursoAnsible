@@ -1,6 +1,0 @@
-hosts dentro de un playbook son los entornos donde quiero que se ejecute el playbook
-
-# apparmor:
-
-|-: para eliminar el salto de linea al final
-uppgrade: para actualizar la version de lo que queramos
