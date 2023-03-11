@@ -1,4 +1,4 @@
--   hosts:          localhost
+-   hosts:          all
     gather_facts:   false
     become:         true
     vars:
@@ -159,6 +159,9 @@
                         msg: "Esto no churula !!!!"
                     tags:
                         - NOTIFICACION
+                -   name:   Fallar el playbook
+                    fail:
+                        msg:    El servidor de nginx no churula
             tags:
                 - PRUEBAS
                 - always

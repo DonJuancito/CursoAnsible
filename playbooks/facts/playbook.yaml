@@ -1,0 +1,83 @@
+-   hosts:  contenedores
+    gather_facts: true
+    
+    tasks:
+        -   name:               crear una variable con un valor
+            set_fact:           # Este módulo nos permite crear variables con contenido dinámico
+                variable1:      17
+                variable2:      true
+                variable3:
+                              - item1
+                              - item2
+                              - item3
+        -   name:               La gracia del set_facts, es que permite usar expresiones JINJA
+            set_fact:
+                variable4: |
+                                El valor de la var1 {{ variable1 }} y 
+                                por otro el de la variable 2 {{ variable2 }}
+                                
+        -   name:               consultar el valor de mis variables
+            block:
+                -   debug:
+                        var:    variable1
+                -   debug:
+                        var:    variable2
+                -   debug:
+                        var:    variable3
+                -   debug:
+                        var:    variable4
+
+
+        -   name:               Asegurarme que tengo la carpeta para los custom facts
+            file:
+                path:           /etc/ansible/facts.d
+                state:          directory
+
+        -   name:               Asegurarme que tengo el custom fact de monitorizacion
+            copy:
+                src:            custom_facts/monitorizado.json
+                dest:           /etc/ansible/facts.d/monitorizado.fact
+                mode:           0644
+                
+        -   name:               Asegurarme que tengo el custom fact de python
+            copy:
+                src:            custom_facts/programa.py
+                dest:           /etc/ansible/facts.d/python.fact
+                mode:           0744
+                
+        -   name:               Asegurarme que tengo el custom fact de bash
+            copy:
+                src:            custom_facts/programa.sh
+                dest:           /etc/ansible/facts.d/bash.fact
+                mode:           0744
+                
+#            001 Ejecucion -> 1
+#            010 Escritura -> 2
+#            100 Lectura   -> 4
+ 
+        -   debug:
+                var:            ansible_facts
+
+        -   debug:
+                var:            ansible_local                
+                
+        -   debug:
+                var:            ansible_facts.ansible_local                
+
+        -   name:               Vuelvo a cargar custom facts
+            setup:
+                gather_subset:
+                                - local
+
+        -   debug:
+                var:            ansible_facts.ansible_local                
+        
+        # En la práctica, no hacemos lo que hemos hecho en este ejemplo, más que si acaso para un TEST
+        # En la práctica tendré un playbook, que haga sus tareas, y genere un custom fact... para que otros playbooks
+        # puedan acceder a él
+                
+                
+                
+                
+                
+                
